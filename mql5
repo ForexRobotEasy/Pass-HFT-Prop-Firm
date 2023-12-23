@@ -1,0 +1,92 @@
+
+// Program Name: Pass HFT Prop Firm
+// Developer's Site: forexroboteasy.com
+// Development Name: Forex Robot Easy Team
+
+// Include necessary libraries
+#include <Trade\Trade.mqh>
+
+// Define the working hours for the EA
+datetime startHour = D'23:00:00'; // Asian trading session end time
+datetime endHour = D'21:59:59'; // New York trading session end time
+
+// Define the trade functions
+void RealTimeMarketDataAnalysis()
+{
+    // Code for real-time market data analysis goes here
+    // ...
+}
+
+void DetectMarketFluctuations()
+{
+    // Code for detecting significant market fluctuations goes here
+    // ...
+}
+
+void ImplementHighFrequencyTradingStrategies()
+{
+    // Code for implementing high-frequency trading strategies goes here
+    // ...
+}
+
+void SmallStopLossesAndRetracements()
+{
+    // Code for setting small stop losses and minuscule retracements goes here
+    // ...
+}
+
+void QuickPaperProfits()
+{
+    // Code for generating quick paper profits goes here
+    // ...
+}
+
+void SmoothCompletionOfAssessments()
+{
+    // Code for ensuring smooth completion of assessments goes here
+    // ...
+}
+
+// The main function
+void OnTick()
+{
+    // Check if the current time is within the working hours
+    datetime currentTime = TimeLocal();
+    if (currentTime >= startHour && currentTime <= endHour)
+    {
+        // Execute the trade functions
+        RealTimeMarketDataAnalysis();
+        DetectMarketFluctuations();
+        ImplementHighFrequencyTradingStrategies();
+        SmallStopLossesAndRetracements();
+        QuickPaperProfits();
+        SmoothCompletionOfAssessments();
+    }
+}
+
+// The entry point of the program
+int OnInit()
+{
+    // Initialize necessary libraries
+    if (!Trade.Init())
+    {
+        Print('Failed to initialize Trade library!');
+        return INIT_FAILED;
+    }
+
+    // Set the symbol and time frame for trading
+    Trade.SetSymbol(Symbol());
+    Trade.SetExpertMagicNumber(123456); // Replace with your own magic number
+
+    return INIT_SUCCEEDED;
+}
+
+// The logical conclusion of the program
+void OnDeinit(const int reason)
+{
+    // Clean up and release resources
+    Trade.Deinit();
+
+    // Print a message indicating the program's termination
+    Print('Pass HFT Prop Firm EA terminated due to ', reason == REASON_REMOVE ? 'manual removal' : 'terminal shutdown');
+}
